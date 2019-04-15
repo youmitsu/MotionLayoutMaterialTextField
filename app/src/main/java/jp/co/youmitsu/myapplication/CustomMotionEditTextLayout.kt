@@ -51,12 +51,12 @@ class CustomMotionEditTextLayout : FrameLayout {
 
     @SuppressLint("ClickableViewAccessibility")
     private fun initCallbacks() {
-        binding.nicknameValue.setOnTouchListener { v, event ->
+        binding.nicknameValue.setOnTouchListener { _, _ ->
             binding.motionLayout.transitionToEnd()
             prepareEditTextToShow()
             false
         }
-        binding.editText.setOnFocusChangeListener { v, hasFocus ->
+        binding.editText.setOnFocusChangeListener { _, hasFocus ->
             ((binding.editText.text as SpannableStringBuilder).toString()).apply {
                 binding.nicknameValue.text = this
                 value = this

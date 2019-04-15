@@ -1,60 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.motion.MotionLayout
+<android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/motion_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutDescription="@xml/activity_scene"
-        tools:context=".MainActivity">
+        android:layout_margin="5dp"
+>
 
-    <TextView
-            android:id="@+id/nickname_title_sub"
-            android:layout_height="wrap_content"
+    <View
+            android:id="@+id/divider"
             android:layout_width="0dp"
-            android:alpha="0"
+            android:layout_height="1dp"
+            android:background="@color/design_default_color_primary_dark"
             app:layout_constraintVertical_chainStyle="packed"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/edit_text"
-            android:text="ニックネーム"/>
+            app:layout_constraintTop_toTopOf="parent"
+    />
 
-    <EditText
+    <jp.co.youmitsu.myapplication.CustomMotionEditTextLayout
             android:id="@+id/edit_text"
-            android:layout_height="wrap_content"
             android:layout_width="0dp"
-            android:gravity="end"
-            android:alpha="0"
+            android:layout_height="80dp"
+            app:title="ニックネーム"
+            app:value="テストさん"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nickname_title_sub"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintBottom_toTopOf="@id/below_divider"
+    />
 
-    <TextView
-            android:id="@+id/nickname_title"
+    <View
+            android:id="@+id/below_divider"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="1dp"
+            android:background="@color/design_default_color_primary_dark"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/nickname_value"
-            android:text="ニックネーム"
-    />
-
-    <TextView
-            android:id="@+id/nickname_value"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:visibility="invisible"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/nickname_title"
-            android:text="ルナやますさこ"
+            app:layout_constraintTop_toBottomOf="@id/edit_text"
+            app:layout_constraintBottom_toTopOf="@id/edit_text2"
     />
 
-</android.support.constraint.motion.MotionLayout>
+    <jp.co.youmitsu.myapplication.CustomMotionEditTextLayout
+            android:id="@+id/edit_text2"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            app:title="座右の銘"
+            app:value="我輩は猫である"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/below_divider"
+            app:layout_constraintBottom_toTopOf="@id/below_divider2"
+    />
+
+    <View
+            android:id="@+id/below_divider2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/design_default_color_primary_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text2"
+            app:layout_constraintBottom_toTopOf="@id/edit_text3"
+    />
+
+    <jp.co.youmitsu.myapplication.CustomMotionEditTextLayout
+            android:id="@+id/edit_text3"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            app:title="今日の一言"
+            app:value="元気があるのが一番!"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/below_divider2"
+            app:layout_constraintBottom_toTopOf="@id/below_divider3"
+    />
+
+    <View
+            android:id="@+id/below_divider3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/design_default_color_primary_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text3"
+            app:layout_constraintBottom_toBottomOf="parent"
+    />
+</android.support.constraint.ConstraintLayout>

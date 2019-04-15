@@ -1,44 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene
-        xmlns:motion="http://schemas.android.com/apk/res-auto">
+        xmlns:motion="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
     <Transition
-            motion:constraintSetEnd="@layout/activity_main_end"
-            motion:constraintSetStart="@layout/activity_main"
-            motion:interpolator="easeInOut"
-            motion:duration="5000">
+            motion:constraintSetStart="@id/start"
+            motion:constraintSetEnd="@id/end"
+            motion:duration="200"
+            motion:interpolator="easeInOut">
 
-        <OnSwipe
-                motion:touchAnchorId="@id/motion_layout"
-                motion:touchAnchorSide="top"
-                motion:dragDirection="dragUp"/>
+        <!--<OnClick motion:target="@id/nickname_value"/>-->
 
     </Transition>
 
-    <!--<ConstraintSet android:id="@+id/start">-->
-    <!--<Constraint-->
-    <!--android:id="@id/nickname_title"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:text="ニックネーム"-->
-    <!--motion:layout_constraintTop_toTopOf="parent"-->
-    <!--motion:layout_constraintBottom_toTopOf="@id/nickname_title_sub"-->
-    <!--motion:layout_constraintStart_toStartOf="parent"-->
-    <!--motion:layout_constraintEnd_toStartOf="@id/nickname_value"-->
-    <!--/>-->
-    <!--</ConstraintSet>-->
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
 
-    <!--<ConstraintSet android:id="@+id/end">-->
-    <!--<Constraint-->
-    <!--android:id="@id/nickname_title"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:text="ニックネーム"-->
-    <!--motion:layout_constraintTop_toTopOf="parent"-->
-    <!--motion:layout_constraintBottom_toBottomOf="parent"-->
-    <!--motion:layout_constraintStart_toStartOf="parent"-->
-    <!--motion:layout_constraintEnd_toStartOf="@id/nickname_value"-->
-    <!--/>-->
-    <!--</ConstraintSet>-->
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+                android:id="@id/nickname_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:paddingStart="10dp"
+                android:textSize="10sp"
+                motion:layout_constraintBottom_toTopOf="@id/edit_text"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"/>
+
+        <Constraint
+                android:id="@+id/nickname_value"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:gravity="end|center_vertical"
+                android:paddingEnd="10dp"
+                android:textSize="15sp"
+                android:alpha="0"
+                motion:layout_constraintTop_toTopOf="parent"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                android:text="ルナやますさこ"/>
+
+        <Constraint
+                android:id="@id/edit_text"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:gravity="left"
+                android:alpha="1"
+                android:visibility="visible"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintTop_toTopOf="parent"
+                motion:layout_constraintBottom_toBottomOf="parent"/>
+    </ConstraintSet>
 
 </MotionScene>

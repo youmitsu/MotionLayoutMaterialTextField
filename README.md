@@ -6,4 +6,6 @@ This project is to express the Material TextField by MotionLayout.
 
 ## Licence
 
-MTI lincence
+Copyright (c) 2019 Yu Mitsuhori (youmitsu).
+
+Licensed under the MTI License.

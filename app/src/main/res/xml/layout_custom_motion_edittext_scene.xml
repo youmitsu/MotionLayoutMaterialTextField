@@ -6,8 +6,7 @@
     <Transition
             motion:constraintSetStart="@id/start"
             motion:constraintSetEnd="@id/end"
-            motion:duration="200"
-            motion:interpolator="easeInOut">
+            motion:duration="200">
 
         <!--<OnClick motion:target="@id/nickname_value"/>-->
 

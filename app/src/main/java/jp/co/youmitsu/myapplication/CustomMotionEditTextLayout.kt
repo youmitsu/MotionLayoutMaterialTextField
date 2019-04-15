@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.databinding.DataBindingUtil
 import android.databinding.ObservableField
+import android.support.constraint.motion.MotionLayout
 import android.text.SpannableStringBuilder
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -51,11 +52,6 @@ class CustomMotionEditTextLayout : FrameLayout {
 
     @SuppressLint("ClickableViewAccessibility")
     private fun initCallbacks() {
-        binding.nicknameValue.setOnTouchListener { _, _ ->
-            //binding.motionLayout.transitionToEnd()
-            prepareEditTextToShow()
-            false
-        }
         binding.editText.setOnFocusChangeListener { _, hasFocus ->
             ((binding.editText.text as SpannableStringBuilder).toString()).apply {
                 binding.nicknameValue.text = this
@@ -63,9 +59,23 @@ class CustomMotionEditTextLayout : FrameLayout {
             }
             if (!hasFocus) {
                 binding.motionLayout.transitionToStart()
-                hideKeyboard()
             }
         }
+        binding.motionLayout.setTransitionListener(object : MotionLayout.TransitionListener {
+            override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {}
+
+            override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {}
+
+            override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {}
+
+            override fun onTransitionCompleted(p0: MotionLayout?, sceneId: Int) {
+                when (sceneId) {
+                    R.id.end -> {
+                        prepareEditTextToShow()
+                    }
+                }
+            }
+        })
     }
 
     private fun prepareEditTextToShow() {

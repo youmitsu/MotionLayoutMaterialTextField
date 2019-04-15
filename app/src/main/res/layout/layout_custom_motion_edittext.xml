@@ -31,10 +31,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:gravity="end|center_vertical"
-                android:paddingEnd="10dp"
                 android:textSize="15sp"
+                android:layout_marginEnd="10dp"
                 android:ellipsize="end"
                 android:singleLine="true"
+                android:maxEms="15"
                 android:text="@{data.value}"
                 android:clickable="true"
                 android:focusable="true"
@@ -43,7 +44,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/nickname_title"/>
 
-        <EditText
+        <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/edit_text"
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
@@ -51,8 +52,6 @@
                 android:visibility="invisible"
                 android:textSize="15sp"
                 android:inputType="text"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:text="@{data.value}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

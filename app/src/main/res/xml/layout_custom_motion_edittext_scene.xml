@@ -29,6 +29,10 @@
                     motion:attributeName="textSize"
                     motion:customFloatValue="15"
             />
+            <CustomAttribute
+                    motion:attributeName="textColor"
+                    motion:customColorValue="#808080"
+            />
         </Constraint>
 
         <Constraint
@@ -75,6 +79,10 @@
                     motion:attributeName="textSize"
                     motion:customFloatValue="12"
             />
+            <CustomAttribute
+                    motion:attributeName="textColor"
+                    motion:customColorValue="@color/colorAccent"
+            />
         </Constraint>
 
         <Constraint
@@ -84,10 +92,10 @@
                 android:gravity="end|center_vertical"
                 android:textSize="15sp"
                 android:alpha="0"
+                android:visibility="invisible"
                 motion:layout_constraintTop_toTopOf="parent"
                 motion:layout_constraintBottom_toBottomOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                android:text="ルナやますさこ"/>
+                motion:layout_constraintStart_toStartOf="parent"/>
 
         <Constraint
                 android:id="@id/edit_text"

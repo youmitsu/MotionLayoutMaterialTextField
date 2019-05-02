@@ -6,7 +6,7 @@
         <variable name="data" type="jp.co.youmitsu.myapplication.CustomMotionEditTextLayout"/>
     </data>
 
-    <android.support.constraint.motion.MotionLayout
+    <androidx.constraintlayout.motion.widget.MotionLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/motion_layout"
@@ -45,7 +45,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/nickname_title"/>
 
-        <android.support.v7.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/edit_text"
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
@@ -59,5 +59,5 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
-    </android.support.constraint.motion.MotionLayout>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>

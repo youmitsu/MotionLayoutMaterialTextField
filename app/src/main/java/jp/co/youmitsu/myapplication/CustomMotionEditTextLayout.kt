@@ -2,9 +2,9 @@ package jp.co.youmitsu.myapplication
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.databinding.DataBindingUtil
-import android.databinding.ObservableField
-import android.support.constraint.motion.MotionLayout
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ObservableField
+import androidx.constraintlayout.motion.widget.MotionLayout
 import android.text.SpannableStringBuilder
 import android.util.AttributeSet
 import android.view.LayoutInflater

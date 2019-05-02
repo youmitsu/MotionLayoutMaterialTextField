@@ -86,9 +86,4 @@ class CustomMotionEditTextLayout : FrameLayout {
             setSelection(length())
         }
     }
-
-    private fun hideKeyboard() {
-        imm.hideSoftInputFromWindow(binding.motionLayout.windowToken, 0)
-    }
-
 }

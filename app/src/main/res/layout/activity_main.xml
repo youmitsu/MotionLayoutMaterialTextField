@@ -6,40 +6,6 @@
         android:layout_height="match_parent"
         android:layout_margin="5dp"
 >
-
-    <!--<View-->
-    <!--android:id="@+id/divider_1"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="1dp"-->
-    <!--android:background="@color/design_default_color_primary_dark"-->
-    <!--app:layout_constraintVertical_chainStyle="packed"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintBottom_toTopOf="@id/default_edittext"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--/>-->
-
-    <!--<android.support.v7.widget.AppCompatEditText-->
-    <!--android:id="@+id/default_edittext"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="80dp"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintTop_toBottomOf="@id/divider_1"-->
-    <!--app:layout_constraintBottom_toTopOf="@id/divider"/>-->
-
-    <View
-            android:id="@+id/divider"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/design_default_color_primary_dark"
-            app:layout_constraintVertical_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/edit_text"
-            app:layout_constraintTop_toTopOf="parent"
-    />
-
     <jp.co.youmitsu.myapplication.CustomMotionEditTextLayout
             android:id="@+id/edit_text"
             android:layout_width="0dp"
@@ -48,7 +14,7 @@
             app:value="テストさん"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/below_divider"
     />
 
@@ -106,7 +72,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edit_text3"
-            app:layout_constraintBottom_toBottomOf="parent"
     />
 
     <com.google.android.material.button.MaterialButton
@@ -114,6 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="登録"
+            android:focusableInTouchMode="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

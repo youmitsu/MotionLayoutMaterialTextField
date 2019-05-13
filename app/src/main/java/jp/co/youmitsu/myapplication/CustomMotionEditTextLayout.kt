@@ -10,6 +10,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.inputmethod.InputMethodManager
 import android.widget.FrameLayout
+import androidx.constraintlayout.motion.widget.MotionScene
 import jp.co.youmitsu.myapplication.databinding.LayoutCustomMotionEdittextBinding
 
 class CustomMotionEditTextLayout : FrameLayout {
@@ -62,6 +63,10 @@ class CustomMotionEditTextLayout : FrameLayout {
             }
         }
         binding.motionLayout.setTransitionListener(object : MotionLayout.TransitionListener {
+            override fun allowsTransition(p0: MotionScene.Transition?): Boolean {
+                return true
+            }
+
             override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {}
 
             override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {}
